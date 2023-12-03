@@ -1,21 +1,8 @@
-<!--
- * @Author: dushuai
- * @Date: 2023-12-01 14:29:58
- * @LastEditors: dushuai
- * @LastEditTime: 2023-12-01 18:41:01
- * @description: appvue
--->
-<template>
-  <div>
-    <!-- <NuxtWelcome /> -->
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
-</template>
-
-<script setup lang="ts">
-function thisLog() {
+/**
+ * 我的打印
+ * @returns log
+ */
+export const ThisLog = () => (
   console.log(`%c
          ________                     ____________
           / ____ / /               ● / ______    
@@ -39,5 +26,4 @@ function thisLog() {
     console.groupEnd(),
     new Date().getDay() === 4 && console.log("疯狂星期四，v我50🐶"),
     console.log("%c dshuais %c V0.0.1 ", "padding: 2px 1px; border-radius: 3px 0 0 3px; color: #fff; background: #606060; font-weight: bold;", "padding: 2px 1px; border-radius: 0 3px 3px 0; color: #fff; background: skyblue; font-weight: bold;")
-}
-</script>
+)
