@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const count = ref<number>(0)
+const count = ref<App.Count>(0)
 const env = useRuntimeConfig()
 
 function handleLog() {

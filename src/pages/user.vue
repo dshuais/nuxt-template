@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'menus'
+})
+
 const count = ref<number>(0)
 </script>
 
