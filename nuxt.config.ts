@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-04 17:03:28
+ * @LastEditTime: 2023-12-04 18:29:00
  * @description: nuxt.config
  */
 import { loadEnv } from "vite";
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     // pinia plugin - https://pinia.esm.dev
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    // '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss'
   ],
 
   // 配置pinia持久化 存储在session内，在store/*ts内设置无效
@@ -46,8 +46,26 @@ export default defineNuxtConfig({
     storage: 'sessionStorage'
   },
 
+  // 配置tailwindcss
+  tailwindcss: {
+    configPath: './tailwind.config.js',
+  },
+
   vite: {
     // envDir: "~/src/env",
+  },
+
+  css: [
+    '@/assets/styles/tailwind.css'
+  ],
+
+  postcss: {
+    plugins: {
+      'postcss-nested': {},
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+    }
   },
 
 });

@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-04 16:47:27
+ * @LastEditTime: 2023-12-04 18:33:30
  * @description: 心平气和
 -->
 <script setup lang="ts">
@@ -30,7 +30,7 @@ function handleLog() {
     <BaseButton />
     <button @click="handleLog">log</button>
     <button @click="appStore.REMOVE_TOKEN()">remove Token</button>
-    <div>{{ appStore.token }}</div>
+    <div class="mt20 w-1/5 h-1/5 bg-yellow-300">{{ appStore.token }}</div>
   </div>
 </template>
 <style scoped lang="scss"></style>

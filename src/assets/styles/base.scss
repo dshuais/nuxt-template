@@ -318,3 +318,44 @@
 .no-events {
   pointer-events: none; // 不可点击
 }
+
+
+// 小手点击涟漪效果
+.ripple-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    // border: 6px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: rippleCircle 3s linear infinite;
+    box-shadow: 0 0 15px 15px rgba(255, 255, 255, 1) inset;
+  }
+
+  &::after {
+    animation-delay: -1.5s;
+  }
+
+  @keyframes rippleCircle {
+    0% {
+      width: 0;
+      height: 0;
+      top: 75px;
+      left: 75px;
+      opacity: 1;
+    }
+
+    100% {
+      width: 150px;
+      height: 150px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+}
