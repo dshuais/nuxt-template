@@ -197,8 +197,9 @@
 .c-red {
   color: red;
 }
+
 .c-FF3733 {
-  color: #FF3733;
+  color: #ff3733;
 }
 
 .w-80 {
@@ -224,7 +225,6 @@
 .w-250 {
   width: 250px;
 }
-
 
 .fons-12 {
   font-size: 12px;
@@ -270,6 +270,7 @@
 .filter-8 {
   filter: grayscale(0.8);
 }
+
 .filter-1 {
   filter: grayscale(1);
 }
@@ -277,12 +278,15 @@
 .opacity_1 {
   opacity: 1;
 }
+
 .opacity_0 {
   opacity: 0;
 }
+
 .z-index1 {
   z-index: 1;
 }
+
 .z-index2 {
   z-index: 2;
 }
@@ -290,6 +294,7 @@
 .spacing-1 {
   letter-spacing: 1px;
 }
+
 .spacing-2 {
   letter-spacing: 2px;
 }
@@ -299,14 +304,17 @@
   transform: translate(-50%, -50%) rotateY(90deg);
   opacity: 0;
 }
+
 .rotatepop-enter-to {
   transform: translate(-50%, -50%) rotateY(0deg);
   opacity: 1;
 }
+
 .rotatepop-leave {
   transform: translate(-50%, -50%) rotateY(0deg);
   opacity: 1;
 }
+
 .rotatepop-leave-to {
   transform: translate(-50%, -50%) rotateY(-90deg);
 }
@@ -315,47 +323,47 @@
   height: 100% !important;
   overflow: hidden !important;
 }
-.no-events {
-  pointer-events: none; // 不可点击
-}
 
+// 不可点击
+.no-events {
+  pointer-events: none;
+}
 
 // 小手点击涟漪效果
 .ripple-circle {
   position: relative;
   width: 150px;
   height: 150px;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    // border: 6px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: rippleCircle 3s linear infinite;
-    box-shadow: 0 0 15px 15px rgba(255, 255, 255, 1) inset;
+.ripple-circle::before,
+.ripple-circle::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  animation: rippleCircle 3s linear infinite;
+  box-shadow: 0 0 15px 15px rgba(255, 255, 255, 1) inset;
+}
+
+.ripple-circle::after {
+  animation-delay: -1.5s;
+}
+
+@keyframes rippleCircle {
+  0% {
+    width: 0;
+    height: 0;
+    top: 75px;
+    left: 75px;
+    opacity: 1;
   }
 
-  &::after {
-    animation-delay: -1.5s;
-  }
-
-  @keyframes rippleCircle {
-    0% {
-      width: 0;
-      height: 0;
-      top: 75px;
-      left: 75px;
-      opacity: 1;
-    }
-
-    100% {
-      width: 150px;
-      height: 150px;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
+  100% {
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    opacity: 0;
   }
 }
