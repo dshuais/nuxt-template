@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-04 18:29:00
+ * @LastEditTime: 2023-12-09 16:06:28
  * @description: nuxt.config
  */
 import { loadEnv } from "vite";
@@ -49,15 +49,16 @@ export default defineNuxtConfig({
   // 配置tailwindcss
   tailwindcss: {
     configPath: './tailwind.config.js',
+    cssPath: './src/assets/styles/tailwind.css'
   },
 
   vite: {
     // envDir: "~/src/env",
   },
 
-  css: [
-    '@/assets/styles/tailwind.css'
-  ],
+  // css: [
+  //   '@/assets/styles/tailwind.css'
+  // ],
 
   postcss: {
     plugins: {
