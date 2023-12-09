@@ -2,8 +2,8 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-08 18:35:08
- * @description: 心平气和
+ * @LastEditTime: 2023-12-09 15:03:15
+ * @description: test
 -->
 <script setup lang="ts">
 const count = ref<number>(0)
@@ -26,6 +26,6 @@ const count = ref<number>(0)
 }
 
 .regular {
-  background-color: theme('colors.bule');
+  /* background: theme('colors.pink'); */
 }
 </style>

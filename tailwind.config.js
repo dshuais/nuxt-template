@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 17:55:41
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-08 18:30:34
+ * @LastEditTime: 2023-12-09 15:01:40
  * @description: 心平气和
  */
 /** @type {import('tailwindcss').Config} */
@@ -14,8 +14,11 @@ export default {
   content: [
     './src/**/*.{js,jsx,ts,tsx,vue}',
     './src/components/**/*.{js,jsx,ts,tsx,vue}',
+    './src/components/*.{js,jsx,ts,tsx,vue}',
     './src/pages/**/*.{js,jsx,ts,tsx,vue}',
+    './src/pages/*.{js,jsx,ts,tsx,vue}',
     './layouts/**/*.{js,jsx,ts,tsx,vue}',
+    './layouts/*.{js,jsx,ts,tsx,vue}',
     './app.vue',
     './src/assets/**/*.scss',
     './src/assets/**/*.css',
@@ -36,17 +39,20 @@ export default {
         secondary: '#EBEDF0',
       }
     },
-    colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
-    },
+    /**
+     * 配置colors相当于重写tailwind的主题色
+     */
+    // colors: {
+    //   'blue': '#1fb6ff',
+    //   'purple': '#7e5bef',
+    //   'pink': '#ff49db',
+    //   'orange': '#ff7849',
+    //   'green': '#13ce66',
+    //   'yellow': '#ffc82c',
+    //   'gray-dark': '#273444',
+    //   'gray': '#8492a6',
+    //   'gray-light': '#d3dce6',
+    // },
   },
   variants: {
     extend: {},
