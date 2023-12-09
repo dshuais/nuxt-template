@@ -2,12 +2,27 @@
  * @Author: dushuai
  * @Date: 2023-12-04 17:55:41
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-09 15:01:40
+ * @LastEditTime: 2023-12-09 19:04:27
  * @description: 心平气和
  */
 /** @type {import('tailwindcss').Config} */
 
 // const defaultTheme = require('tailwindcss/defaultTheme')
+
+/**
+ * 生成颜色css变量名
+ * @param {string} brandName 
+ * @returns 
+ */
+function genSimilarColorsName(brandName) {
+  return {
+    lighter: `var(--ds-${brandName}-lighter-color)`,
+    light: `var(--ds-${brandName}-light-color)`,
+    DEFAULT: `var(--ds-${brandName}-color)`,
+    deep: `var(--ds-${brandName}-deep-color)`,
+    deeper: `var(--ds-${brandName}-deeper-color)`
+  };
+}
 
 export default {
   darkMode: 'class',
@@ -48,17 +63,17 @@ export default {
     /**
      * 配置colors相当于重写tailwind的主题色
      */
-    // colors: {
-    //   'blue': '#1fb6ff',
-    //   'purple': '#7e5bef',
-    //   'pink': '#ff49db',
-    //   'orange': '#ff7849',
-    //   'green': '#13ce66',
-    //   'yellow': '#ffc82c',
-    //   'gray-dark': '#273444',
-    //   'gray': '#8492a6',
-    //   'gray-light': '#d3dce6',
-    // },
+    colors: {
+      white: '#ffffff',
+      black: '#000000',
+      transparent: 'transparent',
+      // 使用主题配置css变量
+      primary: genSimilarColorsName('primary'),
+      info: genSimilarColorsName('info'),
+      success: genSimilarColorsName('success'),
+      warning: genSimilarColorsName('warning'),
+      danger: genSimilarColorsName('danger')
+    },
   },
   variants: {
     extend: {},

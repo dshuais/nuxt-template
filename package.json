@@ -19,6 +19,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
+    "lodash-es": "^4.17.21",
     "nuxt": "^3.8.2",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",

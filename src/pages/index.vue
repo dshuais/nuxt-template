@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-09 17:41:18
+ * @LastEditTime: 2023-12-09 19:08:59
  * @description: test
 -->
 <script setup lang="ts">
@@ -35,12 +35,17 @@ function handleJump() {
     <div @click="jump(Pages.UserDetail, { open: { target: '_blank' } })">打开新标签 去/user/detail</div>
     <div @click="redirect(Pages.User, { a: 1234 })">关闭当前页面</div>
 
+    <details>
+      <summary>Huh?</summary>
+      <hr />
+      <p>Huh.</p>
+    </details>
   </div>
 </template>
 <style scoped>
-.box {
+/* .box {
   @apply w-80 h-20 md:bg-emerald-400 bg-green-800 text-rose-400 md:text-black dark:text-white;
-}
+} */
 
 /* .regular { */
 /* background: theme('colors.pink'); */
