@@ -2,13 +2,15 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-09 19:08:59
+ * @LastEditTime: 2023-12-10 11:52:26
  * @description: test
 -->
 <script setup lang="ts">
 import { Pages } from '~/enums/app';
 // import { to } from '~/utils/router'
+import { setTheme } from '~/utils/theme'
 
+setTheme()
 const count = ref<number>(0)
 
 function handleJump() {

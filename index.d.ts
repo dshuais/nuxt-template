@@ -10,4 +10,4 @@
 /// <reference types="./src/types/response.d.ts" />
 /// <reference types="./src/types/global.d.ts" />
 
-export { };
+declare module "lodash-es";

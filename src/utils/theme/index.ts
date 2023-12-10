@@ -2,11 +2,12 @@
  * @Author: dushuai
  * @Date: 2023-12-09 18:19:12
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-09 19:08:30
+ * @LastEditTime: 2023-12-10 13:01:55
  * @Description: theme fun
  */
 import { merge } from "lodash-es";
 import { genMixColor } from "./genColor";
+import { useSettings } from "~/store/settings";
 
 const THEME_KEY = "theme";
 
@@ -33,7 +34,12 @@ export const defaultThemeConfig: Theme = {
 
 // 设置css变量
 function setStyleProperty(propName: string, value: string) {
-  document.documentElement.style.setProperty(propName, value);
+  if (process.client) {
+    const root = document.querySelector(":root") as HTMLElement;
+    // console.log("root:>> ", root);
+    root?.style.setProperty(propName, value);
+    // document.documentElement.style.setProperty(propName, value);
+  }
 }
 
 function updateThemeColorVar({ colors }: Theme) {
@@ -67,8 +73,11 @@ function updateThemeColorVar({ colors }: Theme) {
 
 // 获取主题对象
 export const getTheme = (): Theme => {
-  const theme = localStorage.getItem(THEME_KEY);
-  return theme ? JSON.parse(theme) : defaultThemeConfig;
+  const { theme: THEME, SET_THEME } = useSettings();
+  // const theme = localStorage.getItem(THEME_KEY);
+  // return theme ? JSON.parse(theme) : defaultThemeConfig;
+  const theme = THEME;
+  return theme;
 };
 
 /**
@@ -76,14 +85,15 @@ export const getTheme = (): Theme => {
  * @param data
  */
 export const setTheme = (data: Theme = defaultThemeConfig) => {
-  console.log("setTheme:>> ");
-  const oldTheme = getTheme();
+  const { theme: THEME, SET_THEME } = useSettings();
+  const oldTheme = THEME;
 
   // 将传入配置与旧的主题合并，以填补缺省的值
   data = merge(oldTheme, data || {});
 
   // 将缓存到浏览器
-  localStorage.setItem(THEME_KEY, JSON.stringify(data));
+  // localStorage.setItem(THEME_KEY, JSON.stringify(data));
+  SET_THEME(data);
 
   // 将主题更新到css变量中，使之生效
   updateThemeColorVar(data);
