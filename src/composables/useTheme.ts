@@ -11,5 +11,7 @@ export const useTheme = () => {
     }
   };
 
+  toggleTheme();
+
   return { theme, toggleTheme };
 };

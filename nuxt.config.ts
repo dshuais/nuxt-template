@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-09 16:06:28
+ * @LastEditTime: 2023-12-10 20:57:19
  * @description: nuxt.config
  */
 import { loadEnv } from "vite";
@@ -36,20 +36,20 @@ export default defineNuxtConfig({
   // 配置modules会自动加载
   modules: [
     // pinia plugin - https://pinia.esm.dev
-    '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
-    '@nuxtjs/tailwindcss'
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxtjs/tailwindcss",
   ],
 
   // 配置pinia持久化 存储在session内，在store/*ts内设置无效
   piniaPersistedstate: {
-    storage: 'sessionStorage'
+    storage: "sessionStorage",
   },
 
   // 配置tailwindcss
   tailwindcss: {
-    configPath: './tailwind.config.js',
-    cssPath: './src/assets/styles/tailwind.css'
+    configPath: "./tailwind.config.js",
+    cssPath: "./src/assets/styles/tailwind.css",
   },
 
   vite: {
@@ -62,11 +62,13 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      'postcss-nested': {},
-      'postcss-import': {},
-      'tailwindcss/nesting': {},
-      'tailwindcss': {},
-    }
+      "postcss-nested": {},
+      "postcss-import": {},
+      "tailwindcss/nesting": {},
+      tailwindcss: {},
+    },
   },
 
+  // 可配置插件执行时机 或 在插件文件名添加后缀 无后缀都执行 client客户端 server服务器
+  // plugins: [{ src: "~/plugins/theme.client.js", mode: "client" }],
 });

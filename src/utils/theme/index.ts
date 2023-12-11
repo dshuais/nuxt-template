@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-09 18:19:12
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-10 13:01:55
+ * @LastEditTime: 2023-12-10 21:06:22
  * @Description: theme fun
  */
 import { merge } from "lodash-es";
@@ -36,7 +36,6 @@ export const defaultThemeConfig: Theme = {
 function setStyleProperty(propName: string, value: string) {
   if (process.client) {
     const root = document.querySelector(":root") as HTMLElement;
-    // console.log("root:>> ", root);
     root?.style.setProperty(propName, value);
     // document.documentElement.style.setProperty(propName, value);
   }

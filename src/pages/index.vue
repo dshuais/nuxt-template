@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-10 11:52:26
+ * @LastEditTime: 2023-12-10 21:02:45
  * @description: test
 -->
 <script setup lang="ts">
@@ -10,7 +10,7 @@ import { Pages } from '~/enums/app';
 // import { to } from '~/utils/router'
 import { setTheme } from '~/utils/theme'
 
-setTheme()
+// setTheme()
 const count = ref<number>(0)
 
 function handleJump() {
@@ -21,7 +21,7 @@ function handleJump() {
 </script>
 
 <template>
-  <div class="bg-primary dark:bg-violet-200">
+  <div class="">
     index {{ count }}
     <div class="bg-green-500 mt20">123</div>
     <div class="box mt20 lg:hidden">我是apply</div>
@@ -36,6 +36,8 @@ function handleJump() {
     <NuxtLink to="/user/detail">去/user</NuxtLink>
     <div @click="jump(Pages.UserDetail, { open: { target: '_blank' } })">打开新标签 去/user/detail</div>
     <div @click="redirect(Pages.User, { a: 1234 })">关闭当前页面</div>
+
+    <div class="bg-success-deep">测试自定义主题</div>
 
     <details>
       <summary>Huh?</summary>

@@ -5,9 +5,6 @@
  * @LastEditTime: 2023-12-10 11:52:16
  * @description: appvue
 -->
-<script setup lang="ts">
-
-</script>
 <template>
   <div>
     <!-- <NuxtWelcome /> -->
